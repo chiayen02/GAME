@@ -37,7 +37,7 @@ class MySurfaceView(context: Context?, attrs: AttributeSet?) :
 
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         paint.color = Color.BLUE
-        paint.textSize = 30f
+        paint.textSize = 40f
         canvas.drawText("射擊遊戲(作者：楊佳晏)",50f,50f, paint)
     }
 
