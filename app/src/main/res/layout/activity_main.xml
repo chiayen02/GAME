@@ -21,9 +21,19 @@
         android:layout_width="120dp"
         android:layout_height="40dp"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/mysv"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/start" />
+        app:layout_constraintEnd_toStartOf="@+id/circle"
+        app:srcCompat="@drawable/start"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
 
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="59dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img"
+        app:srcCompat="@drawable/me" />
 </androidx.constraintlayout.widget.ConstraintLayout>
