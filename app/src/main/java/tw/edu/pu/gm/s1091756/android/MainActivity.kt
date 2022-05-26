@@ -2,8 +2,11 @@ package tw.edu.pu.gm.s1091756.android
 
 import android.content.pm.ActivityInfo
 import android.graphics.Canvas
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MotionEvent
+import android.view.WindowManager
 import android.widget.ImageView
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule
@@ -17,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     var flag:Boolean = false
     lateinit var job : Job
     lateinit var circle : ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
         //設定螢幕水平顯示
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
     }

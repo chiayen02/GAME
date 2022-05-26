@@ -5,6 +5,8 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Rect
+import android.media.MediaPlayer
+import android.view.MotionEvent
 
 class fly (context: Context){
 
@@ -17,6 +19,8 @@ class fly (context: Context){
     var SrcRect: Rect
     lateinit var DestRect: Rect
     var count : Int = 1
+    var fire : Int = 0
+    
 
     init {
         image = BitmapFactory.decodeResource(res, R.drawable.fly1)
@@ -32,13 +36,27 @@ class fly (context: Context){
     }
 
     fun update(){
-        if (count==1){
-            count = 2
-            image = BitmapFactory.decodeResource(res, R.drawable.fly2)
+        if (fire == 0) {
+            if (count == 1) {
+                count = 2
+                image = BitmapFactory.decodeResource(res, R.drawable.fly2)
+            } else {
+                count = 1
+                image = BitmapFactory.decodeResource(res, R.drawable.fly1)
+            }
         }
         else{
-            count = 1
-            image = BitmapFactory.decodeResource(res, R.drawable.fly1)
+            when(fire){
+                1 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot1)
+                2 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot2)
+                3 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot3)
+                4 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot4)
+                5 -> image = BitmapFactory.decodeResource(res, R.drawable.shoot5)
+            }
+            fire++
+            if (fire > 5){
+                fire = 0
+            }
         }
     }
 }
